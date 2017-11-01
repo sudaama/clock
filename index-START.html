@@ -112,8 +112,8 @@
         const hours = now.getHours();
 
         const secondsDegrees = ((seconds/60) * 360) + 90;
-        const minsDegrees = ((minutes/60) * 360) + 90;
-        const hoursDegrees = ((hours/60) * 360) + 90;
+        const minsDegrees = ((minutes/60) * 360 + (secondsDegrees/360) * 6 ) + 90;
+        const hoursDegrees = ((hours/60) * 360 + (minsDegrees/360) * 6) + 90;
         
         console.log("[sec-degs: " + (secondsDegrees - 90) % 360 + " secs: " + seconds + 
           "]" +   "[min-degs: " + (minsDegrees - 90)%360 + " mins: " + minutes + "]" +
